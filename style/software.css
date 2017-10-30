@@ -1,0 +1,1007 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
+body {
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    margin: 0px auto 0px auto;
+    font-family: 'Open Sans', sans-serif;
+    overflow: hidden;
+    background: black;
+    cursor: default;
+}
+#content {
+    position: relative;
+    height: 580px;
+    margin: 0px auto 0px auto;
+    width: 1100px;
+    z-index: 0;
+    background: white;
+}
+#workspace{
+    position: absolute;
+    left: 0;
+    top: 28px;
+    width: 100%;
+    height: 480px;
+}
+#software img{
+  max-width: 100%;
+  z-index: 0;
+  position: absolute;
+}
+.wstypes img{
+  max-height: 100%;
+}
+#imgfundo{
+  max-height: 95.5%;
+}
+#workspace .app{
+    width: 80px;
+    height: 70px;
+    margin: 10px;
+    cursor: pointer;
+    position: absolute;
+    transition: 0.2s;
+    border: 3px solid hsla(0, 0%, 0%, 0);
+}
+#workspace .app .running{
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: hsla(0, 0%, 55%, 0.5);
+    position: absolute;
+}
+i.iconapp{
+    color: black;
+    line-height: 50px;
+    font-size: 47px;
+    width: 80px;
+    text-align: center;
+}
+i.inIdleMode{
+    color: #00ff7b;
+    font-size: 12px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+}
+.app h4{
+  top: 50px;
+  width: 80px;
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px 0px black, -1px 1px 0px black, -1px -1px 0px black, 1px -1px 0px black;
+  margin: 0;
+  font-size: 11px;
+}
+
+.infoapp,.uninapp,.idleapp{
+  width: 22px;
+  height: 18px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  position: relative;
+  left: 83px;
+  color: white;
+  transition: 0.2s;
+  opacity: 0;
+  cursor: pointer;
+}
+.idleapp{
+background: #00ff7b;
+top: -73%;
+}
+.infoapp{
+background: #0f7bff;
+top: -84%;
+}
+.uninapp{
+  background: #ff0a0a;
+  top: -78%;
+}
+.app:hover .infoapp,.app:hover .uninapp,.app:hover .idleapp{
+  opacity: 0.8;
+}
+i.iconinfo,i.iconunin,i.iconidle{
+  position: absolute;
+  top: 0;
+  right: 6px;
+  line-height: 18px;
+  font-size: 12px;
+}
+.close{
+  position: absolute;
+}
+#inicio{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #333;
+  left: 0;
+  top: 0;
+  z-index: 5;
+}
+#inicio button{
+  left: 42%;
+  top: 50%;
+  position: absolute;
+  width: 16%;
+  font-size: 40px;
+}
+#software{
+width: 100%;
+height: 100%;
+position: relative;
+margin-left: 0;
+transition: 1s;
+}
+#bottom{
+  position: absolute;
+  bottom: 0;
+  width: 64%;
+  left: 18%;
+  height: 50px;
+  perspective: 170px;
+}
+#suporte{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 94%;
+  z-index: 0;
+  background: #333;
+  transform: rotateX(18deg);
+  opacity: 0.2;
+}
+#iconSuporte a{
+  text-decoration: none;
+}
+#iconSuporte{
+    position: absolute;
+    left: 0;
+    top: -16px;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    text-align: center;
+}
+.bottomIcon{
+  display: inline-block;
+  font-size: 60px;
+  margin: 0 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.bottomIcon:hover{
+  -webkit-transform: translateY(-10px);
+  transform: translateY(-10px);
+  transition: 0.4s;
+}
+.changeScreen{
+  position: absolute;
+  background: black;
+  top: 20%;
+  height: 60%;
+  width: 70px;
+  transition: 0.4s;
+  z-index: 3;
+  cursor: pointer
+}
+.changeScreen h4{
+  -webkit-transform: rotateZ(90deg);
+  transform: rotateZ(90deg);
+  color: white;
+  font-size: 40px;
+  margin: 0;
+  position: absolute;
+}
+.changeScreen i{
+  color: white;
+  margin: 160px 10px;
+}
+#changeToHard h4{
+    left: -52px;
+    top: 155px;
+}
+#changeToSoft h4{
+    left: -70px;
+    top: 155px;
+}
+#changeToSoft i{
+    margin-left: 50px;
+}
+#changeToHard{
+  right: -40px;
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+}
+#changeToHard:hover{
+  right: 0px;
+}
+#changeToSoft{
+  display: none;
+  left: -40px;
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+}
+#changeToSoft:hover{
+  left: 0px;
+}
+
+#backapps{
+  position: fixed;
+  top: 0;
+  height: 26px;
+  width: 1100px;;
+  z-index: 4;
+  background: #e0e0e0;
+}
+#leftbott i{
+    font-size: 14px;
+}
+#leftbott a{
+    color: black;
+}
+#rightbott h4,#leftbott i{
+  float: right;
+  line-height: 26px;
+  margin: 0;
+  padding: 0 2px;
+  transition: 0.2s;
+}
+#rightbott .fa-download {
+  padding: 0;
+}
+#rptop{
+  position: absolute;
+  right: 280px;
+}
+#intSpeed{
+  position: absolute;
+  left: 940px;
+}
+#cpuUse{
+  position: absolute;
+  left: 880px;
+}
+#ramUse{
+  position: absolute;
+  left: 820px;
+}
+#rightbott i{
+  line-height: 26px;
+  margin: 0;
+  padding: 0 2px;
+  transition: 0.2s;
+}
+#rightbott h4,#rightbott i{
+  font-size: 12px;
+}
+.runtime-points{
+    color: #006161;
+    margin: 0 3px;
+    line-height: 22px;
+    font-size: 18px;
+    text-shadow: 0.5px 0.5px 0 hsla(162, 100%, 30%, 1),1px 1px 0 hsla(162, 100%, 33%, 1),1.5px 1.5px 0 hsla(162, 100%, 36%, 1)
+}
+#balance{
+  text-align: right;
+}
+#leftbott{
+  float: left;
+}
+#backapps i{
+  padding: 0 6px;
+}
+#leftbott i:hover{
+  background: #919191;
+    cursor: pointer;
+}
+#sep{
+  background: black;
+  width: 2px;
+  top: 2%;
+  height: 24px;
+  position: relative;
+  float: right;
+  margin: 1px 4px;
+}
+.window,.infoBox{
+  position: absolute;
+  background: white;
+  z-index: 5;
+  display: none;
+}
+.window.full{
+    left: 0;
+    top: 24px;
+    width: 100%;
+    height: 556px;
+    border: none;
+    border-top: 1px solid;
+}
+.window.normal{
+  left: 18%;
+  top: 16%;
+  width: 64%;
+  height: 60%;
+  overflow-y: auto;
+}
+.window.install{
+  left: 12%;
+  top: 12%;
+  width: 76%;
+  height: 80%;
+}
+.window.noHeight{
+  left: 18%;
+  top: 16%;
+  width: 64%;
+}
+.infoBox{
+    left: 20%;
+    top: 16%;
+    width: 64%;
+}
+.window.normal .foldersSpace{
+  position: absolute;
+  top: 25px;
+  left: 140px;
+  height: 296px;
+  width: 564px;
+}
+.window.normal .foldersSpace i{
+  padding: 4px;
+}
+.window .top,.infoBox .top{
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 24px;
+}
+.window .bottom{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 26px;
+  text-align: center;
+  font-size: 12px;
+}
+.window .bottom h3{
+  font-size: 12px;
+  margin: 0;
+  line-height: 26px;
+}
+.window .menu{
+  position: absolute;
+  left: 0;
+  top: 25px;
+  width: 140px;
+}
+.window.normal .menu{
+  height: 296px;
+}
+.window.full .menu{
+  height: 505px;
+}
+.menu h3{
+  width: 100%;
+  background: #e0e0e0;
+  color: #333;
+  transition: 0.2s;
+  margin: 0;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  padding: 6px 0;
+}
+.menu h3.active{
+  color: white;
+  background: #de7c3b;
+}
+.window .title,.infoBox .title{
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    width: 100%;
+    line-height: 24px;
+    text-align: center;
+    font-size: 14px;
+}
+.window .principal{
+  position: absolute;
+  width: 100%;
+  margin: 0;
+  height: 504px;
+  top: 25px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.window .principal #bigOffer{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 814px;
+  height: 322px;
+  background: black;
+  margin: 2px;
+}
+.window .principal .bigApp{
+  position: absolute;
+  width: 270px;
+  height: 160px;
+  background: black;
+  margin: 2px;
+}
+.principal .type{
+  position: absolute;
+  right: 10px;
+  top: 4px;
+  color: hsl(360, 0%, 50%);
+  z-index: 10;
+}
+#bigOffer .iconOnShop{
+    font-size: 100px;
+}
+#bigOffer .type{
+    font-size: 50px;
+}
+.window .principal .bigApp .iconOnShop{
+  font-size: 80px;
+}
+.window .principal i{
+  position: absolute;
+}
+#suggest .app{
+  position: relative;
+}
+.bigApp .type{
+    font-size: 36px;
+}
+#suggest .type{
+    font-size: 32px;
+}
+#suggest .app .iconOnShop{
+  font-size: 50px;
+}
+#shop .app i{
+  transition: transform 0.4s;
+}
+#shop .app:after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: black; /* For browsers that do not support gradients */
+    background: -webkit-radial-gradient(black,gray);
+    opacity:0;
+    transition: 0.4s;
+}
+#shop .app:hover:after{
+  transition: 0.2s;
+  opacity: 0.2;
+}
+:root{
+  --topBigOffers: 324px;
+  --leftLeft:816px;
+}
+#big1{
+  left: var(--leftLeft);
+  top: 0;
+}
+#big2{
+  left: var(--leftLeft);
+  top: 162px;
+}
+#big3{
+  left: var(--leftLeft);
+  top: 324px;
+}
+#big4{
+  left: 0;
+  top: var(--topBigOffers);
+}
+#big5{
+  left: 272px;
+  top: var(--topBigOffers);
+}
+#big6{
+  left: 544px;
+  top: var(--topBigOffers);
+}
+.principal .app{
+  cursor: pointer;
+}
+.principal .app .info{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 24%;
+  background: white;
+  opacity: 0.5;
+  transition: 0.2s;
+}
+.principal .app:hover .info{
+  opacity: 0.9;
+}
+
+.name{
+  position: absolute;
+  left:0;
+  top: 0;
+  color: white;
+}
+#software .price{
+position: absolute;
+color: white;
+bottom: 0;
+left:0;
+width: 100%;
+text-align: center;
+}
+#bigOffer .name{
+  margin: 20px;
+  font-size: 28px;
+}
+#bigOffer .price{
+  margin: 5px 0;
+  font-size: 22px;
+}
+.bigApp .name{
+  margin: 4px 10px;
+  font-size: 28px;
+}
+.bigApp .price{
+  margin: 0;
+  font-size: 20px;
+}
+#bestApps .name{
+  margin: 4px 10px;
+  font-size: 24px;
+}
+#bestApps .price{
+  margin: 0;
+  font-size: 18px;
+}
+#bestApps{
+  position: absolute;
+  top: 486px;
+  margin: 0 4px;
+}
+.app-in-line{
+  display: inline-block;
+  margin: 0 6px;
+}
+
+.app-in-line .app{
+  width: 210px;
+  height: 150px;
+  background: black;
+  display: -webkit-inline-box;
+  margin-bottom: 10px;
+  margin-right: 2px;
+  border: 1px solid hsla(0,0%,0%,0.1);
+}
+
+
+#basicInfo{
+  margin: 40px;
+}
+#basicInfo h2{
+  font-size: 24px;
+  margin: 4px 0;
+  text-align: center;
+  border-bottom: 1px solid black;
+}
+#basicInfo h3{
+  font-size: 18px;
+  margin: 6px 0 2px 0;
+}
+#basicInfo h4{
+  font-size: 12px;
+  margin: 4px 16px;
+}
+.rpused{
+  margin: 0 36px;
+}
+.SystemRequirements{
+  margin: 10px
+}
+.requirements{
+    margin: 10px 5%;
+    width: 90%;
+}
+.requirements tr{
+  height: 30px;
+}
+.requirements th{
+  width: 221px;
+}
+.requirements th:nth-child(1){
+  padding-left: 10px;
+  text-align: left;
+}
+td:nth-child(2), td:nth-child(3), td:nth-child(4), td:nth-child(5){
+  text-align: center;
+}
+
+.buy{
+  position: relative;
+  right: 36px;
+  float: right;
+  margin: 0 0 10px 0;
+  height: 38px;
+  width: 120px;
+  font-size: 24px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.priceOnInfo{
+  font-size: 24px;
+  left: 36px;
+  width: 200px;
+  position: relative;
+  margin: 8px 0 0 0;
+}
+/*geral*/
+.confirmationbox{
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 60%;
+  background: white;
+  z-index: 10;
+}
+.confirmationbox h4{
+  text-align: center;
+}
+.confirmationbox button{
+  position: relative;
+  margin: 2%;
+  left: 40%;
+  width: 6%;
+  cursor: pointer;
+}
+.infoBox{
+  background: white;
+  position: absolute;
+  width: 60%;
+  left: 20%;
+  top: 40%;
+  z-index: 3;
+  border: 1px solid #e0e0e0;
+  border-radius: 2px;
+  transition: opacity 0.3s;
+}
+.infoBox h4{
+  margin: 32px 10px 10px 10px;
+}
+
+.backbar{
+  background: white;
+  position: absolute;
+}
+.bar{
+  position: absolute;
+}
+.downloadSpace .bar{
+  background: #008fd6;
+}
+#downloads h5{
+  position: absolute;
+  top: 58px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+.installSpace .bar{
+  background: #0f2;
+}
+
+.downloadSpace .backbar{
+  width: 520px;
+}
+.downloadSpace{
+	height: 80px;
+  width: 100%;
+  position: relative;
+  background: #f0f0f0;
+  border-bottom: 1px solid black;
+}
+.downloadSpace .fa-pause-circle,.downloadSpace .fa-play-circle,.downloadSpace .fa-times-circle{
+  position: absolute;
+  right: 22px;
+  top: 23px;
+  font-size: 32px;
+  cursor: pointer;
+}
+.downloadSpace h4,.downloadSpace h3{
+    position: absolute;
+    left:110px;
+    margin: -4px 0 0 0;
+}
+.downloadSpace h4{
+  top: 54px;
+  font-size: 12px;
+}
+.downloadSpace h3{
+  top: 10px;
+  font-size: 18px;
+  margin-left: 4px;
+}
+.downloadSpace .fa-file{
+    position: absolute;
+    top: 18px;
+    left: 26px;
+    font-size: 42px;
+    margin: 0;
+}
+
+.installSpace .backbar{
+  width: 590px;
+}
+.installSpace{
+	height: 80px;
+  width: 100%;
+  left: 0;
+  top: 320px;
+  position: relative;
+}
+.installSpace h4,.installSpace h3{
+    position: absolute;
+    margin: 0;
+}
+.installSpace h4{
+  top: 54px;
+  font-size: 12px;
+  left:110px;
+}
+.installSpace h3{
+  top: -280px;
+  text-align: center;
+  width: 100%;
+  font-size: 60px;
+}
+.installSpace i{
+    position: absolute;
+    top: -290px;
+    width: 100%;
+    font-size: 390px;
+    margin: 0;
+    text-align: center;
+    opacity: 0.6;
+    z-index: -1;
+}
+#butInst1, #butInst2{
+  width: 10%;
+  position: absolute;
+  top: 400px;
+}
+#butInst1{
+  left: 39%;
+}
+#butInst2{
+  left: 51%;
+}
+button{
+  cursor: pointer;
+}
+
+#upgrades .upgrade{
+  height: 90px;
+  width: 90%;
+  left: 5%;
+  margin: 26px 0;
+  position: relative;
+}
+#upgrades .upgrade.true{
+  background: hsl(0,0%,88%)
+}
+#upgrades .upgrade button{
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 8px;
+}
+#upgrades .upgrade h2{
+    position: absolute;
+    top: 0px;
+    right: 22px;
+    font-size: 18px;
+}
+#upgrades .upgrade h4{
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  margin: 0;
+  text-align: center;
+  width: 74px;
+}
+#upgrades .upgrade h3{
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  margin: 0;
+}
+#upgrades .upgrade p{
+  position: absolute;
+  left: 10px;
+  bottom: 11px;
+  margin: 0;
+  max-width: 510px;
+}
+
+
+/*achievements*/
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+.tableAction{
+  cursor: pointer;
+  transition: 0.1s;
+}
+.tableAction:hover{
+  background: #00ff7b;
+}
+th, td {
+    padding: 6px;
+    font-size: 11px;
+}
+td h3{
+  position: absolute;
+  margin: -11px 0 0 -5px;
+  font-size: 10px;
+  width: 244px;
+  text-align: center;
+}
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background: #333;
+  color: white;
+}
+/*system care*/
+
+
+/*new name*/
+#newName h2{
+  text-align: center;
+  margin: 10px 0 88px 0;
+}
+#newName input{
+  text-align: center;
+  height: 30px;
+  position: absolute;
+  top: 74px;
+  left: 20%;
+  width: 60%;
+}
+#newName #cancelButton{
+right: 51%;
+}
+#newName #confirmButton{
+  left: 51%;
+}
+#newName button{
+  position: absolute;
+  top: 116px;
+}
+
+/*alert*/
+
+.alertBox{
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 160px;
+  background: white;
+  cursor: pointer;
+  z-index: 20;
+}
+.alertBox h1{
+  text-align: center;
+  font-size: 18px;
+  margin: 0;
+}
+.alertBox p{
+  font-size: 14px;
+  margin: 4px 14px;
+}
+
+/*workspace*/
+#wstypesspace{
+    position: relative;
+}
+.wstypes{
+  position: relative;
+  margin: 20px 20px 40px 20px;
+  display:-webkit-inline-box;
+  width: 140px;
+  height: 110px;
+  cursor: pointer;
+}
+.wstypes:after{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 140px;
+  height: 110px;
+  background: hsla(0,0%,0%,0.3)
+}
+.wstypes.selected:after{
+  background: hsla(0,0%,0%,0)
+}
+.wstypes:hover:after{
+  background: hsla(0,0%,0%,0)
+}
+.wstypes h3{
+  margin-top: 86%;
+  text-align: center;
+  width: 100%;
+  font-size: 12px;
+}
+.wstypes:nth-child(1){
+  background: #d000ff;
+  margin-left: 88px;
+}
+
+.wstypes:nth-child(2){
+  background: #00d9ff;
+}
+.wstypes:nth-child(2) i{
+  color: white;
+  left: 52px;
+  top: 35px;
+  font-size: 38px;
+  position: absolute;
+}
+.wstypes:nth-child(3) img{
+  max-height: 100%;
+  max-width: 100%;
+  position: absolute;
+  vertical-align: middle;
+  top: 8px;
+}
+#wstypesspace h2{
+  font-size: 18px;
+  text-align: center;
+  margin: 0 0 10px 0;
+}
+#wstypesspace input{
+  height: 26px;
+  width: 80px;
+}
+#wsinput3 input{
+  width: 344px;
+}
+#iconWorkspace{
+  position: absolute;
+  font-size: 60px;
+}
+/*setting*/
+#settSpace{
+  position: absolute;
+  left:0;
+  top: 30px;
+}
+#topInts{
+  position: absolute;
+  display:-webkit-inline-box;
+  left: 172px;
+}
+#topInts input{
+  text-align: center;
+}
+#topInts h3{
+  position: relative;
+  margin: 10px 32px;
+  text-align: -webkit-center;
+}

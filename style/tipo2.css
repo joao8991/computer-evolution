@@ -1,0 +1,213 @@
+/*geral*/
+/*
+ *  Scrollbars STYLE 1
+ */
+::-webkit-scrollbar-track
+{
+	border: 1px solid black;
+}
+
+::-webkit-scrollbar
+{
+	width: 10px;
+	height: 10px;
+	background-color: white;
+}
+
+::-webkit-scrollbar-thumb
+{
+	background-color: black;
+}
+
+/*bordas 3px pretas*/
+table,#up,.wstypes,.infoboxnear,button,.backbar,.confirmationbox,.usage,.alertBox,#workspace .run,#workspace .notRun:hover,.window,.infoBox,#upgrades .upgrade,#hardware .component,#hardware .upgradeBox,#hardware .upgradeBoxInfo{
+	border: 1px solid #ccc;
+	border-radius: 2px;
+}
+.wstypes.selected{
+  border: 3px solid #EEEEEE;
+}
+/*software*/
+
+.name{
+	text-shadow: 2px 2px 0 #666;
+}
+#workspace .notRun{
+    border: 1px solid hsla(0, 0%, 0%, 0);
+}
+
+.infoapp,.uninapp,.idleapp{
+  left: 81px;
+}
+#workspace .run,#workspace .notRun:hover{
+	  background: hsla(0, 0%, 88%, 0.5);
+}
+#workspace .runIdle{
+    border: 3px solid #00ff7b;
+	  background: hsla(0, 0%, 88%, 0.5);
+}
+#workspace .app:after{
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: -1px;
+  top: -1px;
+  opacity: 0;
+  border: 1px solid hsla(200, 78%, 44%, 1);
+  background: hsla(200, 78%, 44%, 0.3);
+  transition: 0.2s;
+}
+#workspace .app.finish:after{
+  transition: 0s;
+  opacity: 1;
+}
+#workspace .app{
+    border: 1px solid hsla(0, 0%, 0%, 0);
+}
+#workspace .app.run{
+    border: 1px solid hsla(0, 0%, 0%, 1);
+}
+
+#iconSuporte a{
+  color: black;
+}
+.window .top,.infoBox .top{
+  background: #e0e0e0;
+  border-bottom: 3px solid #666;
+}
+.window .bottom{
+  background: #e0e0e0;
+  border-top: 1px solid black;
+}
+.window .menu{
+  background: #e0e0e0;
+  border-right: 1px solid black;
+}
+.window .close{
+		position: absolute;
+    background: red;
+    color: red;
+    padding: 0px 3px;
+    top: 5px;
+    line-height: 13px;
+		font-size: 9px;
+		left:4px;
+    border-radius: 100%;
+    transition: 0.2s;
+    cursor: pointer;
+}
+.window .close:hover{
+      color: white;
+}
+/*hardware*/
+#hardware .component{
+  background: white;
+  transition: 0.2s
+}
+#hardware .component:hover{
+  background: #e0e0e0;
+}
+#hardware .locked:hover{
+  background: white;
+}
+/*geral*/
+
+.backbar{
+	height: 12px;
+	top: 30px;
+	  left:110px;
+}
+.bar{
+	  position: absolute;
+	  background: #008fd6;
+		height: 12px;
+		top: 31px;
+		left: 111px;
+}
+
+button{
+	background: white;
+	font-weight: bold;
+}
+button:hover{
+	background: #e0e0e0;
+}
+.infoboxnear{
+  display: none;
+  position: absolute;
+	background: white;
+  font-size: 12px;
+  opacity: 1;
+  padding: 6px;
+  font-family: arial;
+  transition: opacity 0.4s;
+  z-index: 20;
+}
+/*interruptor tipo3
+.onoffswitch {
+    position: relative; width: 54px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    height: 21px; padding: 0; line-height: 21px;
+    border: 2px solid #FFFFFF; border-radius: 21px;
+    background-color: #EEEEEE;
+    transition: background-color 0.3s ease-in;
+}
+.onoffswitch-label:before {
+    content: "";
+    display: block; width: 21px; margin: 0px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 31px;
+    border: 2px solid #FFFFFF; border-radius: 21px;
+    transition: all 0.3s ease-in 0s;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label {
+    background-color: #34A7C1;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label, .onoffswitch-checkbox:checked + .onoffswitch-label:before {
+   border-color: #34A7C1;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label:before {
+    right: 0px;
+}
+*/
+/*interruptor tipo2*/
+.onoffswitch {
+    position: relative; width: 54px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    height: 21px; padding: 0; line-height: 21px;
+    border: 1px solid #666;
+    background-color: #EEEEEE;
+    transition: background-color 0.3s ease-in;
+}
+.onoffswitch-label:before {
+    content: "";
+    display: block; width: 21px; margin: 0px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 31px;
+    border: 1px solid #666;
+    transition: all 0.3s ease-in 0s;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label {
+    background-color: #000;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label, .onoffswitch-checkbox:checked + .onoffswitch-label:before {
+   border-color: #000;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label:before {
+    right: 0px;
+}
