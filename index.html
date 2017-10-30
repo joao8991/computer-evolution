@@ -1,0 +1,561 @@
+<html lang="pt-pt"><head>
+        <link rel="stylesheet" type="text/css" href="style/software.css">
+        <link rel="stylesheet" type="text/css" href="style/hardware.css">
+        <link rel="stylesheet" id="activeStyle" type="text/css" href="style/tipo1.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/mootools/1.6.0/mootools.min.js"></script>
+        <!--<script src="https://cdn1.kongregate.com/javascripts/kongregate_api.js"></script>-->
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            var mousex=0,mousey=0;
+            function atualizarxy(event) {
+                mousex = event.clientX - (window.innerWidth-1100)/2;
+                mousey = event.clientY ;
+            }
+            /*
+                kongregateAPI.loadAPI(function(){
+                  window.kongregate = kongregateAPI.getAPI();
+                  updateFields();
+
+                  kongregate.services.addEventListener('login', function(){
+                    updateFields();
+                  });
+                });*/
+        </script>
+    </head>
+    <body onmousemove="atualizarxy(event)">
+        <div id="content">
+          <div class="infoboxnear"></div>
+          <div class="changeScreen" id="changeToHard" onclick="changeScreen()">
+            <i class="fa fa-caret-left"></i>
+            <h4>Hardware</h4>
+           </div>
+           <div class="changeScreen" id="changeToSoft" onclick="changeScreen()">
+              <i class="fa fa-caret-right"></i>
+              <h4>Software</h4>
+            </div>
+
+          <div id="backapps">
+              <div id="leftbott">
+                  <a href="https://facebook.com/lxgames" target="blank"><div>  <i class="fa fa-facebook-official"></i>  </div></a>
+              </div>
+              <div id="rightbott">
+                  <h4 id="date"></h4>
+                  <h4 id="balance"></h4>
+                  <div id="sep"></div>
+                  <h4 id="intSpeed">Internet:2B/s</h4>
+                  <h4 id="cpuUse"></h4>
+                  <h4 id="ramUse"></h4>
+                  <h4 id="rptop"><span class="runtime-points">RP</span>:<span class="runtime-pointsValue"></span></h4>
+              </div>
+          </div>
+          <!--<div id="inicio">
+            <button>Start</button>
+          </div>
+
+          criar inicio como windows
+        -->
+          <div id="software">
+          <img id=imgfundo>
+            <div id="workspace">
+              <i id="iconWorkspace" class="fa fa-star" style="display:none"></i>
+            </div>
+            <div class="window normal" id="archive">
+              <div class="top">
+                <h4 class="title">
+                  Archive
+                </h4>
+                <i class="fa fa-close close" onclick="closeWindow('archive')"></i>
+              </div>
+              <div class="menu" id="archiveMenu">
+                <h3 onclick="changeArchive(1)" class="active">All</h3>
+                <h3 onclick="changeArchive(2)" class="notactive">On workspace</h3>
+                <h3 onclick="changeArchive(3)" class="notactive">Not on workspace</h3>
+                <h3 onclick="changeArchive(4)" class="notactive">Not downloaded</h3>
+              </div>
+              <div class="bottom">
+                <h3 id="infoArchive"></h3>
+              </div>
+              <div class="foldersSpace">
+                <table>
+                  <tr>
+                              <th>Name</th>
+                              <th>Type</th>
+                              <th>Size</th>
+                              <th></th>
+                              <th></th>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div class="window normal" id="settings">
+              <div class="top">
+                <h4 class="title">
+                  Settings
+                </h4>
+                <i class="fa fa-close close" onclick="closeWindow('settings')"></i>
+              </div>
+              <div id="settSpace">
+          <div id="topInts">
+            <h3>Sound
+              <div class="onoffswitch" id="soundInt">
+                  <input  onclick="soundFunc()" type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch1" checked>
+                  <label class="onoffswitch-label" for="myonoffswitch1"></label>
+              </div>
+            </h3>
+          <h3>Music
+            <div class="onoffswitch" id="musicInt">
+                <input  onclick="musicFunc()" type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch2" checked>
+                <label class="onoffswitch-label" for="myonoffswitch2"></label>
+            </div>
+          </h3>
+        <h3>Animations
+          <div class="onoffswitch" id="animInt">
+              <input  onclick="animationFunc()" type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch3" checked>
+              <label class="onoffswitch-label" for="myonoffswitch3"></label>
+          </div>
+        </h3>
+      </div>
+
+            </div>
+            </div>
+            <div class="window noHeight" id="workspaceDiv">
+              <div class="top">
+                <h4 class="title">
+                  Workspace
+                </h4>
+                <i class="fa fa-close close" onclick="closeWindow('workspaceDiv')"></i>
+              </div>
+              <div id="wstypesspace">
+                <div class="wstypes selected" onclick="wsType(1)">
+                  <h3>Simple color</h3>
+                </div>
+                  <div class="wstypes" onclick="wsType(2)">
+                    <i class="fa fa-star"></i>
+                    <h3>Icon</h3>
+                  </div>
+                    <div class="wstypes" onclick="wsType(3)">
+                      <img src="https://www.laguiadelvaron.com/wp-content/uploads/2017/03/pasl.jpg">
+                      <h3>Image</h3>
+                    </div>
+                      <h2 id="wsinput1">Background color: <input id="backcolor" type="color" value="#ffffff"></h2>
+                      <h2 id="wsinput4">Icon: <input list="icons"></h2>
+                      <h2 id="wsinput2">Icon color: <input type="color" value="#000000"></h2>
+                      <h2 id="wsinput5">Icon size:<input style="text-align:center" type="number" name="quantity" min="20" max="300" step="10" value="30"> px</h2>
+                      <h2 id="wsinput3">Image source: <input type="text" id=srcimg value="https://www.laguiadelvaron.com/wp-content/uploads/2017/03/pasl.jpg"></h2>
+                      <button type="button" name="button" id="confirmChanges" style="left:40%;width:20%;position:relative;margin:5px;padding:5px;font-weight:bold;">Confirm changes</button>
+                      <datalist id="icons">
+                        <option value="star">
+                        <option value="rocket">
+                        <option value="anchor">
+                        <option value="bank">
+                    </datalist>
+              </div>
+            </div>
+            <div class="window normal" id="achievements">
+              <div class="top">
+                <h4 class="title">
+                  Achievements
+                </h4>
+                <i class="fa fa-close close" onclick="closeWindow('achievements')"></i>
+              </div>
+              <table id="AchiTab" style="border:none">
+                <tr>
+                            <th>Name</th>
+                            <th>Progress</th>
+                            <th>Level</th>
+                            <th>Reward</th>
+                        </tr>
+                        <tr>
+                            <td>Clicks</td>
+                            <td><progress value="0" max="100"></progress><h3></h3></td>
+                            <td>1</td>
+                            <td>10$</td>
+                        </tr>
+                        <tr>
+                            <td>Apps runned</td>
+                            <td><progress value="0" max="100"></progress><h3></h3></td>
+                            <td>1</td>
+                            <td>10$</td>
+                        </tr>
+                  </table>
+            </div>
+            <div class="window normal" id="downloads">
+              <div class="top">
+                <h4 class="title">
+                  Downloads
+                </h4>
+                <i class="fa fa-close close" onclick="closeWindow('downloads')"></i>
+              </div>
+              <h5>Nothing to see here...</h5>
+            </div>
+            <div class="window full" id="shop">
+              <div class="top">
+                <h4 class="title">
+                  Shop
+                </h4>
+                <i class="fa fa-close close" onclick="closeWindow('shop')"></i>
+              </div>
+
+              <div class="bottom">
+              </div>
+              <div class="principal">
+                <div class="app" id="bigOffer">
+                  <i class="iconOnShop"></i>
+                  <h2 class="name"></h2>
+                  <h3 class="price"></h3>
+                  <i class="type"></i>
+                </div>
+                <div id="big1" class="bigApp app">
+                  <i class="iconOnShop"></i>
+                  <h2 class="name"></h2>
+                  <h3 class="price"></h3>
+<i class="type"></i>
+                </div>
+                <div id="big2" class="bigApp app">
+                  <i class="iconOnShop"></i>
+                  <h2 class="name"></h2>
+                  <h3 class="price"></h3>
+<i class="type"></i>
+                </div>
+                <div id="big3" class="bigApp app">
+                  <i class="iconOnShop"></i>
+                  <h2 class="name"></h2>
+                  <h3 class="price"></h3>
+<i class="type"></i>
+                </div>
+                <div id="big4" class="bigApp app">
+                  <i class="iconOnShop"></i>
+                  <h2 class="name"></h2>
+                  <h3 class="price"></h3>
+<i class="type"></i>
+                </div>
+                <div id="big5" class="bigApp app">
+                  <i class="iconOnShop"></i>
+                  <h2 class="name"></h2>
+                  <h3 class="price"></h3>
+<i class="type"></i>
+                </div>
+                <div id="big6" class="bigApp app">
+                  <i class="iconOnShop"></i>
+                  <h2 class="name"></h2>
+                  <h3 class="price"></h3>
+<i class="type"></i>
+                </div>
+                <div class="" id="bestApps">
+                  <h2>All apps</h2>
+                  <div id="suggest" class="app-in-line">
+
+                    </div>
+                 </div>
+              </div>
+            </div>
+
+
+            <div class="window noHeight" id="computer">
+              <div class="top">
+                <h4 class="title">
+                  Computer
+                </h4>
+                <i class="fa fa-close close" onclick="closeWindow('computer')"></i>
+              </div>
+              <div id="basicInfo">
+                <h2>Basic info about your computer</h2>
+                <h3>Operating System</h3>
+                <h4>iDoors</h4>
+                <h3>System</h3>
+                <h4>Processor Unit: Infel i6 3GHz<br>Memory RAM: 4.56GB<br>Graphic Processing Unit: Super X 2GB<br>System type:2-bit</h4>
+                <h3>Computer settings</h3>
+                <h4>Computer Name: Blue Ninja</h4> <i class="fa fa-pencil" style="position: absolute;margin: -20px 0 0 0;cursor: pointer;"onclick="changeComputerName()"></i>
+              </div>
+            </div>
+            <div id="newName" class="window noHeight" style="top:150;left:20%;width:60%">
+                <div class="top">
+                  <h4 class="title">
+                    New name
+                  </h4>
+                  <i class="fa fa-close close" onclick="closeWindow('newName')"></i>
+                </div>
+                <h2>Choose a new name for your computer</h2>
+                <input id="newnameinput" value="New name">
+                <button id="cancelButton" onclick="closeWindow('newName')">Cancel</button>
+                <button id="confirmButton" onclick="changeNameConfirm()">Confirm</button>
+            </div>
+            <div class="window normal" id="upgrades">
+              <div class="top">
+                <h4 class="title">
+                  Upgrades
+                </h4>
+                <i class="fa fa-close close" onclick="closeWindow('upgrades')"></i>
+              </div>
+
+              <div id="upgradesFalse">
+
+              </div>
+
+              <div id="upgradesTrue">
+
+              </div>
+
+            </div>
+            <div id="bottom">
+              <div id="suporte">
+              </div>
+              <div id="iconSuporte">
+                  <div class="bottomIcon" onclick="createWindow('archive')">  <i class="fa fa-archive"></i>  </div>
+                  <div class="bottomIcon" onclick="createWindow('computer')">  <i class="fa fa-building"></i>  </div>
+                  <div class="bottomIcon" onclick="createWindow('workspaceDiv')">  <i class="fa fa-desktop"></i>  </div>
+                  <div class="bottomIcon" onclick="createWindow('shop'),centrarIcons()">  <i class="fa fa-shopping-cart"></i>  </div>
+                  <div class="bottomIcon" onclick="createWindow('downloads')">  <i class="fa fa-download"></i>  </div>
+                  <div class="bottomIcon" onclick="createWindow('upgrades')">  <i class="fa fa-arrow-circle-up"></i>  </div>
+                  <div class="bottomIcon" onclick="createWindow('achievements')">  <i class="fa fa-star"></i>  </div>
+                  <div class="bottomIcon" onclick="createWindow('settings')">  <i class="fa fa-cog"></i>  </div>
+
+                </div>
+            </div>
+            </div>
+            <div id="hardware">
+                    <div onclick="changeUp(1)"class="component notLocked" style="left:30px;top:40px;width:582px;height:520px;z-index:0">
+                      <h3 style="text-align:center">Case </h3>
+                      <h4 style="top:10px;left:10px;" id="temp"></h4>
+                    </div>
+                    <div onclick="changeUp(2)"class="component notLocked"style="left:334px;top:74px;width:268px;height:210px;z-index:1">
+                      <h3 style="text-align:center;top:96px">  HDD  </h3>
+                      <h4 style="text-align:center;top:124px;" id="texthdd"></h4>
+                    </div>
+                    <div onclick="changeUp(3)"class="component notLocked"style="left:40px;top:74px;width:268px;height:210px;z-index:1">
+                      <h3 style="text-align:center;top:96px">  Power Supply </h3>
+                      <h4 id="wts" style="text-align:center;top:124px;"></h4>
+                    </div>
+                    <div id="coolingComponent" class="component locked"style="left:462px;top:300px;width:140px;height:236px;z-index:1">
+                      <h3 style="text-align:center;top:92px"></h3>
+                      <h4 class="valor" id="valorrpm" style="text-align:center;top:116px;"></h4>
+                    </div>
+                    <div onclick="changeUp(5)"class="component notLocked"style="left:40px;top:300px;width:406px;height:236px;z-index:1;">
+                      <h3 style="text-align:center">  Motherboard </h3>
+                    </div>
+                    <div id="gpuComponent"class="component notLocked"style="left:50px;top:350px;width:386px;height:78px;z-index:2">
+                      <h3 style="text-align:center;top:22px"> GPU </h3>
+                      <h4 class="valor" id="valorgpu"></h4>
+                      <h4 class="watts" id="wattsgpu"></h4>
+                      <h4 style="text-align:center;top:48px;" id="textgpu"></h4>
+                    </div>
+                    <div onclick="changeUp(7)"class="component notLocked"style="left:50px;top:444px;width:80px;height:80px;z-index:2;">
+                    <h4 class="valor" id="valorCpu"></h4>
+                    <h4 class="watts" id="wattscpu"></h4>
+                      <h4 style="text-align:center;top:17px;" id="speedCpu"></h4>
+                      <h3 style="text-align:center;top:22px">  CPU </h3>
+                      <h4 style="text-align:center;top:48px;" id="coresCpu"></h4>
+                      <h4 style="text-align:center;top:60px;" id="cacheCpu"></h4>
+                    </div>
+                    <div onclick="changeUp(8)"class="component notLocked"style="left:146px;top:444px;width:290px;height:80px;z-index:2">
+                      <h3 style="text-align:center;top:22px">  RAM </h3>
+                      <h4 class="valor" id="valorRam"></h4>
+                      <h4 class="watts" id="wattsram"></h4>
+                      <h4 style="text-align:center;top:48px;" id="textram"></h4>
+                    </div>
+                    <div id="up">
+                      <h2>Case</h2>
+                      <table class="1">
+                        <tr>
+                          <th>Component</th>
+                          <th>Quantity</th>
+                          <th>Power Consumption</th>
+                        </tr>
+                        <tr>
+                              <td>CPU</td>
+                              <td>1</td>
+                              <td></td>
+                        </tr>
+                        <tr>
+                              <td>RAM</td>
+                              <td></td>
+                              <td></td>
+                        </tr>
+                        <tr id="gpuline">
+                              <td>GPU</td>
+                              <td></td>
+                              <td></td>
+                        </tr>
+                        <tr id="coolingline">
+                              <td>Cooling</td>
+                              <td></td>
+                              <td></td>
+                        </tr>
+                        <tr>
+                              <td>Total</td>
+                              <td> </td>
+                              <td></td>
+                        </tr>
+                      </table>
+                      <div class="upgradeBox 1">
+                        <h4 class="caract">Energy dissipated per second</h4>
+                        <h4 class="qtd"></h4>
+                        <h4 class="price"></h4>
+                        <i class="fa fa-plus-square" onclick="box.upgrade(1)" onmouseover="box.test(1)" onmouseout="box.out()"></i>
+                      </div>
+                      <div class="upgradeBox 1">
+                        <h4 class="caract">Maximum Temperature</h4>
+                        <h4 class="qtd"></h4>
+                        <h4 class="price"></h4>
+                        <i class="fa fa-plus-square" onclick="box.upgrade(2)" onmouseover="box.test(2)" onmouseout="box.out()"></i>
+                      </div>
+                      <div class="componentUp 1"></div>
+
+                      <div class="upgradeBox 2" style="display:none">
+                        <h4 class="caract">Quantity</h4>
+                        <h4 class="qtd">1</h4>
+                        <h4 class="price"></h4>
+                        <i class="fa fa-plus-square" onclick="storage.upgrade(1)" onmouseover="storage.test(1)" onmouseout="storage.out()"></i>
+                      </div>
+                      <div class="upgradeBox 2" style="display:none">
+                        <h4 class="caract">Capacity</h4>
+                        <h4 class="qtd">10mb</h4>
+                        <h4 class="price"></h4>
+                        <i class="fa fa-plus-square" onclick="storage.upgrade(2)" onmouseover="storage.test(2)" onmouseout="storage.out()"></i>
+                      </div>
+                      <div class="upgradeBox 2" style="display:none">
+                        <h4 class="caract">Speed</h4>
+                        <h4 class="qtd">10mb/s</h4>
+                        <h4 class="price"></h4>
+                        <i class="fa fa-plus-square" onclick="storage.upgrade(3)" onmouseover="storage.test(3)" onmouseout="storage.out()"></i>
+                      </div>
+                      <div class="componentUp 2" style="display:none"></div>
+                      <div class="upgradeBox 3" style="display:none">
+                        <h4 class="caract">Power</h4>
+                        <h4 class="qtd"></h4>
+                        <h4 class="price"></h4>
+                        <i class="fa fa-plus-square" onclick="power.upgrade(1)" onmouseover="power.test()" onmouseout="power.out()"></i>
+                      </div>
+                      <div class="componentUp 3" style="display:none"></div>
+                      <div class="upgradeBox 4" style="display:none">
+                        <h4 class="caract">RPM</h4>
+                        <h4 class="qtd" ></h4>
+                        <h4 class="price"></h4>
+                        <i class="fa fa-plus-square" onclick="cooling.upgrade(1)" onmouseover="cooling.test(1)" onmouseout="cooling.out()"></i>
+                      </div>
+                      <div class="componentUp 4" style="display:none"></div>
+                      <div class="upgradeBox 5" style="display:none">
+                        <h4 class="caract">RAM slots</h4>
+                        <h4 class="qtd" ></h4>
+                        <h4 class="price"></h4>
+                        <i class="fa fa-plus-square" onclick="mother.upgrade(1)" onmouseover="mother.test(1)" onmouseout="mother.out()"></i>
+                      </div>
+                      <div class="upgradeBox 5" style="display:none">
+                        <h4 class="caract">GPU slots</h4>
+                        <h4 class="qtd"></h4>
+                        <h4 class="price"></h4>
+                        <i class="fa fa-plus-square" onclick="mother.upgrade(2)" onmouseover="mother.test(2)" onmouseout="mother.out()"></i>
+                      </div>
+                      <div class="componentUp 5" style="display:none"></div>
+                      <div class="upgradeBox 6" style="display:none">
+                        <h4 class="caract">Quantity</h4>
+                        <h4 class="qtd"></h4>
+                        <h4 class="price"></h4>
+                        <i class="fa fa-plus-square" onclick="gpu.upgrade(1)" onmouseover="gpu.test(1)" onmouseout="gpu.out()"></i>
+                      </div>
+                      <div class="upgradeBox 6" style="display:none">
+                        <h4 class="caract">Memory</h4>
+                        <h4 class="qtd"></h4>
+                        <h4 class="price"></h4>
+                        <i class="fa fa-plus-square" onclick="gpu.upgrade(2)" onmouseover="gpu.test(2)" onmouseout="gpu.out()"></i>
+                      </div>
+                      <div class="upgradeBox 6" style="display:none">
+                        <h4 class="caract">Speed</h4>
+                        <h4 class="qtd"></h4>
+                        <h4 class="price"></h4>
+                        <i class="fa fa-plus-square" onclick="gpu.upgrade(3)" onmouseover="gpu.test(3)" onmouseout="gpu.out()"></i>
+                      </div>
+                      <div class="upgradeBox 6" style="display:none">
+                        <h4 class="caract">Cores</h4>
+                        <h4 class="qtd"></h4>
+                        <h4 class="price"></h4>
+                        <i class="fa fa-plus-square" onclick="gpu.upgrade(4)" onmouseover="gpu.test(4)" onmouseout="gpu.out()"></i>
+                      </div>
+                      <div class="upgradeBox 6" style="display:none">
+                        <h4 class="caract">Power consumption</h4>
+                        <h4 class="qtd"></h4>
+                        <h4 class="price"></h4>
+                        <i class="fa fa-minus-square" onclick="gpu.upgrade(5)" onmouseover="gpu.test(5)" onmouseout="gpu.out()"></i>
+                      </div>
+                      <div class="componentUp 6" style="display:none"></div>
+                      <div class="upgradeBox 7" style="display:none">
+                        <h4 class="caract">Speed</h4>
+                        <h4 class="qtd"></h4>
+                        <h4 class="price"></h4>
+                        <i class="fa fa-plus-square" onclick="cpu.upgrade(1)" onmouseover="cpu.test(1)" onmouseout="cpu.out()"></i>
+                      </div>
+                      <div class="upgradeBox 7" style="display:none">
+                        <h4 class="caract">Cores</h4>
+                        <h4 class="qtd">1</h4>
+                        <h4 class="price"></h4>
+                        <i class="fa fa-plus-square" onclick="cpu.upgrade(2)" onmouseover="cpu.test(2)" onmouseout="cpu.out()"></i>
+                      </div>
+                      <div class="upgradeBox 7" style="display:none">
+                        <h4 class="caract">Cache</h4>
+                        <h4 class="qtd">1</h4>
+                        <h4 class="price"></h4>
+                        <i class="fa fa-plus-square" onclick="cpu.upgrade(3)" onmouseover="cpu.test(3)" onmouseout="cpu.out()"></i>
+                      </div>
+                      <div class="upgradeBox 7" style="display:none">
+                        <h4 class="caract">Power consumption</h4>
+                        <h4 class="qtd"></h4>
+                        <h4 class="price"></h4>
+                        <i class="fa fa-minus-square" onclick="cpu.upgrade(4)" onmouseover="cpu.test(4)" onmouseout="cpu.out()"></i>
+                      </div>
+                      <div class="componentUp 7" style="display:none"></div>
+                      <div class="upgradeBox 8" style="display:none">
+                        <h4 class="caract">Quantity</h4>
+                        <h4 class="qtd">1</h4>
+                        <h4 class="price"></h4>
+                        <i class="fa fa-plus-square" onclick="ram.upgrade(1)" onmouseover="ram.test(1)" onmouseout="ram.out()"></i>
+                      </div>
+                      <div class="upgradeBox 8" style="display:none">
+                        <h4 class="caract">Memory</h4>
+                        <h4 class="qtd">1</h4>
+                        <h4 class="price"></h4>
+                        <i class="fa fa-plus-square" onclick="ram.upgrade(2)" onmouseover="ram.test(2)" onmouseout="ram.out()"></i>
+                      </div>
+                      <div class="upgradeBox 8" style="display:none">
+                        <h4 class="caract">Speed</h4>
+                        <h4 class="qtd">1</h4>
+                        <h4 class="price"></h4>
+                        <i class="fa fa-plus-square" onclick="ram.upgrade(3)" onmouseover="ram.test(3)" onmouseout="ram.out()"></i>
+                      </div>
+                      <div class="upgradeBox 8" style="display:none">
+                        <h4 class="caract">Power consumption</h4>
+                        <h4 class="qtd"></h4>
+                        <h4 class="price"></h4>
+                        <i class="fa fa-minus-square" onclick="ram.upgrade(4)" onmouseover="ram.test(4)" onmouseout="ram.out()"></i>
+                      </div>
+                      <div class="componentUp 8" style="display:none"></div>
+                    </div>
+              </div>
+                </div>
+              </div>
+
+            </div>
+
+        </div>
+
+    <script src="os.js"></script>
+    <script src="achiv.js"></script>
+    <script src="style/style.js"></script>
+    <script src="helper.js"></script>
+    <script src="case.js"></script>
+    <script src="power.js"></script>
+    <script src="mother.js"></script>
+    <script src="ram.js"></script>
+    <script src="cpu.js"></script>
+    <script src="gpu.js"></script>
+    <script src="cooling.js"></script>
+    <script src="app.js"></script>
+    <script src="storage.js"></script>
+    <script src="hardware.js"></script>
+    <script src="upgrades.js"></script>
+    <script src="alerts.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
