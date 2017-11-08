@@ -1,4 +1,5 @@
 <html lang="pt-pt"><head>
+        <link rel="stylesheet" type="text/css" href="style/transicao.css">
         <link rel="stylesheet" type="text/css" href="style/software.css">
         <link rel="stylesheet" type="text/css" href="style/hardware.css">
         <link rel="stylesheet" id="activeStyle" type="text/css" href="style/tipo1.css">
@@ -25,8 +26,16 @@
                 });*/
         </script>
     </head>
-    <body onmousemove="atualizarxy(event)">
+    <body onmousemove="atualizarxy(event)" onload="endTransicao()">
+        <script src="transicao.js"></script>
         <div id="content">
+          <div id="inicio">
+              <div id="box">
+                  <h3></h3>
+                  <div class="butinicio" id="button" onclick="start()">Login</div>
+              </div>
+              <h4>iDoors&#174; 1.0</h4>
+          </div>
           <div class="infoboxnear"></div>
           <div class="changeScreen" id="changeToHard" onclick="changeScreen()">
             <i class="fa fa-caret-left"></i>
@@ -44,19 +53,12 @@
               <div id="rightbott">
                   <h4 id="date"></h4>
                   <h4 id="balance"></h4>
-                  <div id="sep"></div>
-                  <h4 id="intSpeed">Internet:2B/s</h4>
+                  <h4 id="intSpeed"></h4>
                   <h4 id="cpuUse"></h4>
                   <h4 id="ramUse"></h4>
-                  <h4 id="rptop"><span class="runtime-points">RP</span>:<span class="runtime-pointsValue"></span></h4>
+                  <h4 id="rptop"></h4>
               </div>
           </div>
-          <!--<div id="inicio">
-            <button>Start</button>
-          </div>
-
-          criar inicio como windows
-        -->
           <div id="software">
           <img id=imgfundo>
             <div id="workspace">
@@ -264,7 +266,7 @@
               <div id="basicInfo">
                 <h2>Basic info about your computer</h2>
                 <h3>Operating System</h3>
-                <h4>iDoors</h4>
+                <h4>iDoors&#174; 1.0</h4>
                 <h3>System</h3>
                 <h4>Processor Unit: Infel i6 3GHz<br>Memory RAM: 4.56GB<br>Graphic Processing Unit: Super X 2GB<br>System type:2-bit</h4>
                 <h3>Computer settings</h3>

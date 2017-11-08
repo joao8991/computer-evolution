@@ -1,5 +1,5 @@
 // variaveis
-var cash = 1e10,computerName="Bad Panda";
+var cash = 1e2,computerName="Noob";
 var goodColor = "#00ff7b",badColor = "#f03",clicks=0,appRunned =0;
 var atualWsType = 1,bitLevel = 1;
 wsType(atualWsType)
@@ -57,8 +57,12 @@ var computerCycle = function() {
     balanceAtual();
     atualDate();
 };
-start();
+
 function start(){
+  $("#inicio").css("opacity","0")
+  setTimeout(function(){
+    $("#inicio").css("display","none")
+  },400)
   internet.calcOsc();
   os.calcOsc();
   os.writeTop();
