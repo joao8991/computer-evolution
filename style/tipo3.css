@@ -79,7 +79,7 @@ table,#up,.wstypes,.infoboxnear,button,.backbar,.confirmationbox,.usage,.alertBo
     background: -moz-linear-gradient(#fafafa,#fff); /* For Firefox 3.6 to 15 */
     background: linear-gradient(#fafafa,#fff); /* Standard syntax (must be last) */
 }
-#backapps,.window .top,.infoBox .top,.window .bottom{
+.window .top,.infoBox .top,.window .bottom{
     background: #e0e0e0; /* For browsers that do not support gradients */
     background: -webkit-linear-gradient(#e0e0e0, #ccc); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(#e0e0e0, #ccc); /* For Opera 11.1 to 12.0 */

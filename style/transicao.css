@@ -1,0 +1,23 @@
+#backTrans{
+  z-index: 11;
+  background: -webkit-radial-gradient(130% 55%, farthest-corner,#ff1fa5,#ff6d1f); /* Safari 5.1 to 6.0 */
+  background: -o-radial-gradient(130% 55%, farthest-corner,#ff1fa5,#ff6d1f); /* For Opera 11.6 to 12.0 */
+  background: -moz-radial-gradient(130% 55%, farthest-corner,#ff1fa5,#ff6d1f); /* For Firefox 3.6 to 15 */
+  background: radial-gradient(farthest-corner at 130% 55%,#ff1fa5,#ff6d1f); /* Standard syntax (must be last) */
+  transition: 0.3s;
+  position: absolute;
+  height: 580px;
+  margin: 0px auto 0px auto;
+  width: 1100px;
+}
+#name1{
+    font-size: 50px;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.4s;
+    z-index: 12;
+    color: white;
+  }
